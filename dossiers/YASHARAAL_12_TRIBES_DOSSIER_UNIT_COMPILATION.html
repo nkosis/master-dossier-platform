@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>THE COMPLETE HISTORY OF THE 12 TRIBES OF YASHARA&#x27;AL - DOSSIER UNIT COMPILATION</title><style>
+:root {
+  --gold: #C9A84C;
+  --gold-dim: #8B6F00;
+  --gold-bright: #E8C560;
+  --bg-page: #0D0C0A;
+  --bg-section: #131210;
+  --bg-card: #1A1816;
+  --bg-scripture: #1E1B14;
+  --bg-divider: #111009;
+  --text-primary: #EDE8DC;
+  --text-secondary: #A89F88;
+  --text-muted: #6B6456;
+  --border: rgba(201,168,76,0.2);
+  --border-bright: rgba(201,168,76,0.5);
+  --tag-bg: rgba(201,168,76,0.08);
+  --red-accent: #8B2020;
+  --teal-accent: #1B5E5E;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-padding-top: 64px; }
+body { font-family:'Crimson Pro',Georgia,serif; background:var(--bg-page); color:var(--text-primary); font-size:17px; line-height:1.75; }
+.site-header { position:sticky; top:0; z-index:100; background:var(--bg-divider); border-bottom:1px solid var(--border-bright); padding:0 2rem; }
+.site-header-inner { max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:54px; gap:1rem; }
+.site-title { font-family:'Cinzel',serif; font-size:12px; font-weight:600; color:var(--gold); letter-spacing:0.12em; white-space:nowrap; flex-shrink:0; }
+.progress-bar-wrap { flex:1; height:2px; background:rgba(255,255,255,0.05); border-radius:2px; overflow:hidden; max-width:200px; }
+.progress-bar-fill { height:100%; background:var(--gold); width:0%; transition:width 0.3s ease; }
+.section-indicator { font-size:12px; color:var(--text-muted); white-space:nowrap; min-width:80px; text-align:right; }
+.layout { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:260px 1fr; min-height:calc(100vh - 54px); }
+.sidebar { position:sticky; top:54px; height:calc(100vh - 54px); overflow-y:auto; background:var(--bg-section); border-right:1px solid var(--border); padding:1rem 0; scrollbar-width:thin; scrollbar-color:var(--gold-dim) transparent; }
+.sidebar::-webkit-scrollbar { width:3px; }
+.sidebar::-webkit-scrollbar-thumb { background:var(--gold-dim); }
+.nav-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; color:var(--text-muted); padding:0 1.25rem; margin-bottom:0.5rem; text-transform:uppercase; }
+.nav-item { display:block; padding:0.45rem 1.25rem; font-size:14.5px; color:var(--text-secondary); text-decoration:none; border-left:2px solid transparent; transition:all 0.2s; cursor:pointer; line-height:1.4; }
+.nav-item:hover { color:var(--text-primary); background:rgba(201,168,76,0.05); }
+.nav-item.active { color:var(--gold); border-left-color:var(--gold); background:rgba(201,168,76,0.06); }
+.nav-item .nav-num { font-family:'Cinzel',serif; font-size:10px; color:var(--gold-dim); display:block; margin-bottom:1px; }
+.nav-divider { height:1px; background:var(--border); margin:0.75rem 1.25rem; }
+.nav-sub { padding:0.3rem 1.25rem 0.3rem 1.5rem; font-size:15px; color:var(--text-muted); cursor:pointer; display:block; border-left:2px solid transparent; transition:all 0.2s; line-height:1.4; }
+.nav-sub:hover { color:var(--text-secondary); background:rgba(201,168,76,0.03); }
+.nav-sub.active { color:var(--gold-dim); border-left-color:var(--gold-dim); }
+.entry-nav { font-size:13.5px !important; padding:0.25rem 1.25rem 0.25rem 1.5rem !important; }
+.main { padding:2.5rem 3rem 6rem; overflow-x:hidden; }
+.title-block { text-align:center; padding:3rem 0 2.5rem; border-bottom:1px solid var(--border); margin-bottom:2.5rem; }
+.dossier-eyebrow { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.3em; color:var(--gold); margin-bottom:1.5rem; display:block; }
+.dossier-title { font-family:'Cinzel',serif; font-size:36px; font-weight:700; color:var(--gold); line-height:1.2; margin-bottom:0.75rem; }
+.dossier-subtitle { font-family:'Playfair Display',serif; font-size:18px; color:var(--text-secondary); margin-bottom:1.5rem; }
+.dossier-meta { display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; }
+.meta-pill { font-size:10px; font-family:'Cinzel',serif; letter-spacing:0.1em; color:var(--text-muted); border:1px solid var(--border); padding:0.25rem 0.7rem; border-radius:2px; }
+.doc-section { margin-bottom:3rem; opacity:0; transform:translateY(16px); transition:opacity 0.5s ease,transform 0.5s ease; scroll-margin-top:64px; }
+.doc-section.visible { opacity:1; transform:none; }
+.section-divider { background:var(--bg-divider); border:1px solid var(--border-bright); border-radius:2px; text-align:center; padding:1.5rem; margin-bottom:2rem; }
+.section-num { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.3em; color:var(--gold-dim); margin-bottom:0.4rem; display:block; }
+.section-title { font-family:'Cinzel',serif; font-size:20px; font-weight:700; color:var(--gold); }
+.h1 { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--gold); margin:2rem 0 0.5rem; padding-bottom:0.4rem; border-bottom:1px solid var(--border); line-height:1.3; }
+.h2 { font-family:'Playfair Display',serif; font-size:18px; font-weight:600; color:var(--text-primary); margin:1.5rem 0 0.6rem; line-height:1.3; }
+p { margin-bottom:0.85rem; color:var(--text-primary); }
+.tags { margin:0.5rem 0 1.25rem; display:flex; gap:0.5rem; flex-wrap:wrap; }
+.tag { font-family:'Cinzel',serif; font-size:9.5px; letter-spacing:0.15em; color:var(--gold); background:var(--tag-bg); border:1px solid var(--border); padding:0.2rem 0.6rem; border-radius:2px; }
+.callout { background:var(--bg-card); border-left:4px solid var(--gold); padding:1.25rem 1.5rem; margin:1.5rem 0; font-size:16px; line-height:1.8; color:var(--text-primary); }
+.table-wrap { overflow-x:auto; margin:1rem 0; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { background:#0A2240; color:#B5D4F4; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.12em; padding:0.6rem 0.8rem; text-align:left; border:1px solid rgba(21,63,106,0.4); font-weight:600; }
+td { padding:0.5rem 0.8rem; border:1px solid var(--border); color:var(--text-secondary); vertical-align:top; line-height:1.5; font-size:13px; }
+tr:nth-child(even) td { background:rgba(255,255,255,0.015); }
+tr:hover td { background:rgba(201,168,76,0.03); }
+.def-row { display:grid; grid-template-columns:180px 160px 1fr; gap:0; }
+.def-row > div { padding:0.6rem 0.8rem; border:1px solid var(--border); font-size:13.5px; }
+.def-row:first-child > div { background:#0A2240; color:#B5D4F4; font-family:'Cinzel',serif; font-size:10.5px; letter-spacing:0.1em; font-weight:600; }
+.def-row:nth-child(even) > div { background:rgba(255,255,255,0.015); }
+.def-term { color:var(--gold); font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.08em; }
+.def-pron { color:var(--text-muted); }
+.def-def { color:var(--text-secondary); }
+.scripture-wrap { margin:1.25rem 0; }
+.scripture-toggle { width:100%; background:none; border:none; text-align:left; cursor:pointer; padding:0.6rem 0.9rem; display:flex; align-items:center; justify-content:space-between; gap:0.5rem; border-left:3px solid var(--gold-dim); background:rgba(201,168,76,0.04); transition:background 0.2s; }
+.scripture-toggle:hover { background:rgba(201,168,76,0.08); }
+.scripture-ref-label { font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.1em; color:var(--gold); }
+.scripture-chevron { font-size:12px; color:var(--gold-dim); transition:transform 0.25s; flex-shrink:0; }
+.scripture-toggle.open .scripture-chevron { transform:rotate(180deg); }
+.scripture-body { display:none; background:var(--bg-scripture); border-left:3px solid var(--gold); padding:1rem 1.25rem; font-size:16px; line-height:1.8; color:var(--text-primary); margin-top:1px; }
+.scripture-body.open { display:block; }
+/* ENTRY CARDS */
+.entries-container { display:flex; flex-direction:column; gap:0.5rem; }
+.entry-card { border:1px solid var(--border); border-radius:2px; overflow:hidden; scroll-margin-top:64px; }
+.entry-header { display:flex; align-items:center; justify-content:space-between; padding:1rem 1.25rem; cursor:pointer; background:var(--bg-card); transition:background 0.2s; gap:1rem; }
+.entry-header:hover { background:rgba(201,168,76,0.05); }
+.entry-header.open { background:rgba(201,168,76,0.07); border-bottom:1px solid var(--border); }
+.entry-num-title { display:flex; align-items:center; gap:0.75rem; }
+.entry-num { font-family:'Cinzel',serif; font-size:24px; color:var(--border-bright); min-width:44px; line-height:1; }
+.entry-title { font-family:'Playfair Display',serif; font-size:17px; font-weight:600; color:var(--text-primary); line-height:1.3; }
+.entry-ref-toggle { display:flex; align-items:center; gap:0.75rem; flex-shrink:0; }
+.entry-ref { font-family:'Cinzel',serif; font-size:10.5px; letter-spacing:0.08em; color:var(--gold-dim); }
+.entry-chevron { font-size:14px; color:var(--gold-dim); transition:transform 0.25s; }
+.entry-header.open .entry-chevron { transform:rotate(180deg); }
+.entry-body { display:none; padding:1.5rem 1.5rem 2rem; background:var(--bg-section); }
+.entry-body.open { display:block; }
+.scripture-block { background:var(--bg-scripture); border-left:4px solid var(--gold); padding:1rem 1.25rem; margin-bottom:1.5rem; }
+.scripture-label { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.12em; color:var(--gold); margin-bottom:0.5rem; }
+.scripture-text { font-size:16.5px; line-height:1.8; color:var(--text-primary); }
+.subsection { margin:1.5rem 0; }
+.subsec-title { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.2em; color:var(--gold-dim); border-bottom:1px solid var(--border); padding-bottom:0.4rem; margin-bottom:1rem; }
+.phrase-block { margin-bottom:1.25rem; padding:0.9rem 1rem; background:var(--bg-card); border-left:3px solid var(--teal-accent); }
+.phrase-title { font-family:'Playfair Display',serif; font-size:15.5px; font-weight:600; color:var(--text-primary); margin-bottom:0.4rem; }
+.phrase-meaning { font-size:15px; color:var(--text-secondary); line-height:1.7; }
+.coverage-list { list-style:none; padding:0; }
+.coverage-list li { padding:0.3rem 0; border-bottom:1px solid rgba(201,168,76,0.08); color:var(--text-secondary); font-size:14.5px; }
+.coverage-list li::before { content:"→ "; color:var(--gold-dim); }
+.nations-section { background:rgba(139,32,32,0.05); border:1px solid rgba(139,32,32,0.2); padding:1.25rem; border-radius:2px; margin-top:1.5rem; }
+.nation-block { margin-bottom:1.25rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+.nation-block:last-child { border-bottom:none; }
+.nation-name { font-family:'Cinzel',serif; font-size:12px; font-weight:600; color:var(--red-accent); letter-spacing:0.1em; margin-bottom:0.4rem; }
+.nations-note { color:var(--text-secondary); font-size:15px; border-left:3px solid var(--red-accent); padding:0.5rem 0.75rem; margin:0.5rem 0; background:var(--bg-card); }
+.scroll-top { position:fixed; bottom:2rem; right:2rem; background:var(--bg-card); border:1px solid var(--border-bright); color:var(--gold); width:40px; height:40px; border-radius:2px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:18px; opacity:0; transition:opacity 0.3s; z-index:200; }
+.scroll-top.visible { opacity:1; }
+.scroll-top:hover { background:rgba(201,168,76,0.1); }
+@media (max-width:480px) {
+  .layout { grid-template-columns:1fr; }
+  .sidebar { display:none; }
+  .main { padding:1.5rem 1rem 4rem; }
+  .dossier-title { font-size:26px; }
+  .entry-header { flex-direction:column; align-items:flex-start; }
+  .def-row { grid-template-columns:1fr; }
+}
+</style></head><body>
+<header class="site-header"><div class="site-header-inner"><span class="site-title">YASHARAAL DOSSIER</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill"></div></div><span class="section-indicator" id="sectionIndicator">Compilation</span></div></header>
+<div class="layout"><nav class="sidebar"><div class="nav-label">Navigate</div><a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-1')"><span style="color:var(--gold-dim);margin-right:4px;">01</span>BEFORE THE CREATION OF THE 12 TRIBES OF YA</a>
+<a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-2')"><span style="color:var(--gold-dim);margin-right:4px;">02</span>WHAT HAPPENS AT THE CREATION OF THE 12 TRI</a>
+<a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-3')"><span style="color:var(--gold-dim);margin-right:4px;">03</span>WHAT HAPPENED AFTER THE CREATION OF THE TR</a>
+<a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-4')"><span style="color:var(--gold-dim);margin-right:4px;">04</span>WHAT HAPPENED TO THE TRIBES THAT MADE YAHA</a>
+<a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-5')"><span style="color:var(--gold-dim);margin-right:4px;">05</span>THE 400-YEAR PROPHECY AND THE 430-YEAR REF</a>
+<a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-6')"><span style="color:var(--gold-dim);margin-right:4px;">06</span>WHERE WERE THE TRIBES SCATTERED</a>
+<a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-7')"><span style="color:var(--gold-dim);margin-right:4px;">07</span>WHERE ARE THE TRIBES TODAY</a><div class="nav-divider"></div><a class="nav-item" onclick="scrollToAnchor('audit')"><span class="nav-num">AUDIT</span>Appendix</a></nav><main class="main"><div class="title-block"><h1 class="dossier-title">THE COMPLETE HISTORY OF THE 12 TRIBES OF YASHARA&#x27;AL - DOSSIER UNIT COMPILATION</h1><div class="dossier-subtitle">Foundational Units Covering Origins, Creation, Aftermath, Judgment, Chronology, Scattering, and Modern Identification Positions</div><div class="dossier-meta"><span class="meta-pill">1611 KJV REFERENCE FRAMEWORK</span><span class="meta-pill">#HISTORICAL #PROPHECY #COVENANT #JUDGMENT</span></div></div><section class="doc-section visible" id="unit-1"><div class="section-divider"><span class="section-num">UNIT 1</span><div class="section-title">BEFORE THE CREATION OF THE 12 TRIBES OF YASHARA&#x27;AL</div></div><div class="h2">FOUNDATIONAL FRAMEWORK</div>
+<p>Before the 12 Tribes of YASHARA&#x27;AL existed as a covenant nation, the world was already divided into kingdoms, bloodlines, territorial systems, languages, trade powers, and religious systems that developed after the flood of NOACH (Noah). The formation of the tribes did not happen in isolation. It occurred in the middle of expanding empire systems, spiritual corruption, violence, and competition between nations.</p>
+<p>The biblical narrative presents the formation of YASHARA&#x27;AL as a covenant separation from the surrounding nations. Historical and academic perspectives vary on chronology, migration patterns, and historical synchronization with Egypt and Mesopotamia. This dossier section presents both scriptural and historical positions without liberties.</p>
+<div class="h2">WHO</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>ADAM</td><td>First man in biblical genealogy.</td></tr>
+<tr><td>NOACH (Noah)</td><td>Survivor of the flood.</td></tr>
+<tr><td>SHAM (Shem)</td><td>Covenant bloodline ancestor.</td></tr>
+<tr><td>CHAM (Ham)</td><td>Ancestor connected to Egypt and Canaan.</td></tr>
+<tr><td>YAPHATH (Japheth)</td><td>Ancestor connected to northern migrations.</td></tr>
+<tr><td>Namarad (Nimrod)</td><td>Kingdom builder associated with Babel.</td></tr>
+<tr><td>ABARAHAM (Abraham)</td><td>Covenant patriarch.</td></tr>
+<tr><td>YATZACHQ (Isaac)</td><td>Covenant heir.</td></tr>
+<tr><td>YAQAB (Jacob/YASHARA&#x27;AL)</td><td>Father of the tribes.</td></tr>
+<tr><td>Egyptians</td><td>Expanding imperial civilization.</td></tr>
+<tr><td>Canaanites</td><td>Regional territorial peoples.</td></tr>
+<tr><td>Mesopotamian kingdoms</td><td>Early centralized powers.</td></tr>
+</tbody></table></div>
+<div class="h2">WHAT WAS HAPPENING</div>
+<p>The world before the tribes experienced post-flood repopulation, division of nations, centralized kingdom development, language division at Babel, expansion of trade systems, growth of Egypt, spread of idol worship, territorial conflicts, covenant separation through ABARAHAM, and migration into Canaan.</p>
+<div class="h2">WHERE DID THESE EVENTS OCCUR</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Ararat region</td><td>Post-flood survival.</td></tr>
+<tr><td>Shinar</td><td>Babel system.</td></tr>
+<tr><td>Mesopotamia</td><td>Early kingdom development.</td></tr>
+<tr><td>Ur</td><td>Homeland of ABARAHAM.</td></tr>
+<tr><td>Haran</td><td>Migration point.</td></tr>
+<tr><td>Canaan</td><td>Covenant inheritance land.</td></tr>
+<tr><td>Egypt</td><td>Expanding kingdom power.</td></tr>
+<tr><td>Jordan regions</td><td>Tribal migration corridors.</td></tr>
+<tr><td>Padan-aram</td><td>Expansion of YAQAB&#x27;s household.</td></tr>
+</tbody></table></div>
+<div class="h2">WHEN DID THIS OCCUR</div>
+<p>This era covers post-flood generations, division of nations, Babel rebellion, emergence of kingdoms, patriarchal migrations, covenant establishment, birth of covenant lineage, and formation of the household of YAQAB.</p>
+<p>Two major chronology positions exist: the Biblical Chronology Model, which derives timeline primarily from scripture genealogies, and the Academic Historical Model, which reconstructs timeline through archaeology, inscriptions, and comparative chronologies.</p>
+<div class="h2">WHY WAS THIS PERIOD IMPORTANT</div>
+<p>This era establishes the covenant line, territorial inheritance, separation from surrounding systems, and the foundation for the later creation of the tribes. It also establishes the larger conflict between covenant obedience and expanding imperial/idolatrous systems.</p>
+<div class="h2">GOOD PERSPECTIVE</div>
+<p>From the covenant perspective, YAHAWAH separates ABARAHAM from surrounding corruption. The covenant line is preserved. The future tribes are being prepared through covenant inheritance. The land promise is established. The covenant nation is intended to become separate from surrounding practices.</p>
+<div class="h2">SCRIPTURE WITNESS - GENESIS 12:1</div>
+<p>Now the LORD had said unto Abram, Get you out of your country, and from your kindred, and from your father&#x27;s house, unto a land that I will show you.</p>
+<div class="h2">SCRIPTURE WITNESS - GENESIS 17:7</div>
+<p>And I will establish my covenant between me and you and your seed after you in their generations for an everlasting covenant...</p>
+<div class="h2">EVIL PERSPECTIVE</div>
+<p>From the opposing systems perspective, centralized human authority expands, empire systems develop, territorial domination increases, idolatry spreads, economic control systems form, and covenant separation becomes a threat to surrounding powers. Babel becomes associated with centralized rebellion, political consolidation, and human authority operating independently from YAHAWAH.</p>
+<div class="h2">SCRIPTURE WITNESS - GENESIS 11:4</div>
+<p>Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name...</p>
+<div class="h2">SCRIPTURE WITNESSES</div>
+<p>Genesis 10:32 identifies the families of the sons of Noah after their generations and nations, by which the nations were divided after the flood. Genesis 11:7 records the confounding of language. Genesis 15:18 records the covenant land promise from the river of Egypt unto the Euphrates. Genesis 15:13 records the prophecy of affliction. Genesis 32:28 records the renaming of YAQAB.</p>
+<div class="h2">HISTORICAL WITNESSES</div>
+<p>Mesopotamia shows urban development, trade systems, early law structures, temple systems, and kingdom expansion before the tribal period. Egypt developed centralized administration, agricultural power, river-based trade dominance, monumental construction systems, and dynastic governance. Canaan functioned as a network of city-states, trade corridors, and mixed territorial populations.</p>
+<div class="h2">PRE-TRIBAL TIMELINE</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Flood aftermath</td><td>Repopulation begins.</td></tr>
+<tr><td>Division of nations</td><td>Nations spread geographically.</td></tr>
+<tr><td>Babel rebellion</td><td>Language confusion occurs.</td></tr>
+<tr><td>Rise of Mesopotamian kingdoms</td><td>Centralized powers expand.</td></tr>
+<tr><td>Egyptian growth</td><td>Nile civilization strengthens.</td></tr>
+<tr><td>Call of ABARAHAM</td><td>Covenant separation begins.</td></tr>
+<tr><td>Migration into Canaan</td><td>Covenant inheritance initiated.</td></tr>
+<tr><td>Birth of YATZACHQ</td><td>Covenant line continues.</td></tr>
+<tr><td>Birth of YAQAB</td><td>Father of future tribes.</td></tr>
+<tr><td>Renaming to YASHARA&#x27;AL</td><td>Covenant nation identity begins.</td></tr>
+</tbody></table></div>
+<div class="h2">CONTROLLED CONCLUSION</div>
+<p>Before the creation of the 12 Tribes, the world was already divided into competing civilizations, religious systems, territorial powers, and expanding kingdoms. The biblical narrative presents the formation of YASHARA&#x27;AL as a covenant separation from those systems through ABARAHAM, YATZACHQ, and YAQAB.</p></section><section class="doc-section visible" id="unit-2"><div class="section-divider"><span class="section-num">UNIT 2</span><div class="section-title">WHAT HAPPENS AT THE CREATION OF THE 12 TRIBES OF YASHARA&#x27;AL</div></div><div class="h2">FOUNDATIONAL FRAMEWORK</div>
+<p>The creation of the 12 Tribes of YASHARA&#x27;AL begins with the transformation of YAQAB (Jacob) into YASHARA&#x27;AL (Israel). The tribes originate through his sons and become the covenant structure through which inheritance, leadership, priesthood, warfare, territory, and prophecy are organized.</p>
+<p>This period marks the transition from patriarchal family structure to covenant tribal nation structure. It establishes tribal inheritance, future territorial divisions, priestly authority, rulership prophecy, and future national conflicts.</p>
+<div class="h2">WHO</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>YAQAB (Jacob/YASHARA&#x27;AL)</td><td>Father of the tribes.</td></tr>
+<tr><td>Leah</td><td>Mother of six tribes.</td></tr>
+<tr><td>Rachel</td><td>Mother of Joseph and BANAYAMAYAN (Benjamin).</td></tr>
+<tr><td>Bilhah</td><td>Handmaid and tribal mother.</td></tr>
+<tr><td>Zilpah</td><td>Handmaid and tribal mother.</td></tr>
+<tr><td>YAWASAP (Joseph)</td><td>Double inheritance through sons.</td></tr>
+<tr><td>LAWAYA (Levi)</td><td>Priestly tribe.</td></tr>
+<tr><td>YAHAWADA (Judah)</td><td>Royal lineage tribe.</td></tr>
+</tbody></table></div>
+<div class="h2">WHAT HAPPENS AT THE CREATION OF THE TRIBES</div>
+<p>The tribes form through the sons of YAQAB after covenant inheritance is confirmed, YAQAB is renamed YASHARA&#x27;AL, household expansion occurs, and tribal lineage becomes fixed through his descendants. The tribes become bloodline divisions, territorial divisions, military divisions, and covenant divisions.</p>
+<div class="h2">WHERE DOES THIS OCCUR</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Padan-aram</td><td>Expansion of YAQAB&#x27;s household.</td></tr>
+<tr><td>Canaan</td><td>Covenant inheritance region.</td></tr>
+<tr><td>Bethel</td><td>Covenant encounters.</td></tr>
+<tr><td>Egypt</td><td>Later preservation during famine.</td></tr>
+<tr><td>Hebron region</td><td>Patriarchal settlement areas.</td></tr>
+</tbody></table></div>
+<div class="h2">WHEN DOES THIS OCCUR</div>
+<p>This occurs during the patriarchal era, before Egyptian bondage, and before the Exodus national formation period. The major sequence is: ABARAHAM covenant, YATZACHQ inheritance, YAQAB birth, YAQAB exile and return, household expansion, renaming to YASHARA&#x27;AL, tribal establishment, and migration into Egypt.</p>
+<div class="h2">WHY WERE THE TRIBES CREATED</div>
+<p>The tribes establish covenant inheritance structure, national organization, prophetic lineage, and future governance. Each tribe carries distinct responsibilities, prophetic associations, territorial inheritance, and historical outcomes.</p>
+<div class="h2">GOOD PERSPECTIVE</div>
+<p>From the covenant perspective, the tribes are divinely organized, inheritance is structured, covenant promises continue, and national identity is established. The tribes function as a covenant people separated unto YAHAWAH.</p>
+<div class="h2">SCRIPTURE WITNESS - GENESIS 35:10-12</div>
+<p>And God said unto him, Your name is Jacob: your name shall not be called any more Jacob, but Israel shall be your name: and he called his name Israel. And God said unto him, I am God Almighty: be fruitful and multiply; a nation and a company of nations shall be of you, and kings shall come out of your loins; And the land which I gave Abraham and Isaac, to you I will give it, and to your seed after you will I give the land.</p>
+<div class="h2">EVIL PERSPECTIVE</div>
+<p>From the surrounding nations&#x27; perspective, tribal expansion represented territorial competition, covenant separation challenged surrounding religious systems, and future tribal growth threatened regional power balances. Conflict begins developing between covenant law and surrounding kingdom systems.</p>
+<div class="h2">THE 12 TRIBES</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>RAWABAN (Reuben)</td><td>Leah - Firstborn.</td></tr>
+<tr><td>SHAMAYAM (Simeon)</td><td>Leah - Tribal warrior line.</td></tr>
+<tr><td>LAWAYA (Levi)</td><td>Leah - Priesthood.</td></tr>
+<tr><td>YAHAWADA (Judah)</td><td>Leah - Kingship lineage.</td></tr>
+<tr><td>DAN</td><td>Bilhah - Judgment.</td></tr>
+<tr><td>NAPTHALAM (Naphtali)</td><td>Bilhah - Expansion.</td></tr>
+<tr><td>GAD</td><td>Zilpah - Warfare.</td></tr>
+<tr><td>ASAR (Asher)</td><td>Zilpah - Prosperity.</td></tr>
+<tr><td>YASHASHAKAR (Issachar)</td><td>Leah - Labor and wisdom.</td></tr>
+<tr><td>ZABALAN (Zebulun)</td><td>Leah - Trade and coastlands.</td></tr>
+<tr><td>YAWASAP (Joseph)</td><td>Rachel - Double inheritance.</td></tr>
+<tr><td>BANAYAMAYAN (Benjamin)</td><td>Rachel - Warrior tribe.</td></tr>
+</tbody></table></div>
+<div class="h2">THE DOUBLE PORTION OF YAWASAP (JOSEPH)</div>
+<p>YAWASAP receives a double inheritance through his sons Ephraim and Manasseh. This affects territorial distribution, tribal counting, and later national divisions.</p>
+<div class="h2">THE PRIESTHOOD OF LAWAYA (LEVI)</div>
+<p>LAWAYA receives priestly responsibility, tabernacle duties, and covenant service roles. Unlike other tribes, Levi receives no standard territorial inheritance.</p>
+<div class="h2">SCRIPTURE WITNESS - DEUTERONOMY 10:9</div>
+<p>Wherefore Levi has no part nor inheritance with his brethren; the LORD is his inheritance...</p>
+<div class="h2">THE ROYAL LINE OF YAHAWADA (JUDAH)</div>
+<p>Kingship prophecy becomes associated with YAHAWADA.</p>
+<div class="h2">SCRIPTURE WITNESS - GENESIS 49:10</div>
+<p>The sceptre shall not depart from Judah, nor a lawgiver from between his feet, until Shiloh come...</p>
+<div class="h2">CONTROLLED CONCLUSION</div>
+<p>The creation of the 12 Tribes transforms the covenant family into a covenant national structure. Through YAQAB becoming YASHARA&#x27;AL, tribal inheritance, leadership, priesthood, warfare, prophecy, and territorial identity become permanently linked to the tribes.</p></section><section class="doc-section visible" id="unit-3"><div class="section-divider"><span class="section-num">UNIT 3</span><div class="section-title">WHAT HAPPENED AFTER THE CREATION OF THE TRIBES</div></div><div class="h2">FOUNDATIONAL FRAMEWORK</div>
+<p>After the formation of the 12 Tribes of YASHARA&#x27;AL, the tribes entered a period of migration, expansion, survival, covenant development, warfare, kingdom formation, division, and eventual judgment. This phase includes migration into Egypt, rapid population growth, Egyptian bondage, the Exodus, wilderness wandering, conquest of Canaan, tribal territorial inheritance, the Judges period, united kingdom formation, division of the kingdom, and the beginning of covenant decline.</p>
+<div class="h2">WHO</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>YAWASAP (Joseph)</td><td>Preserver during famine.</td></tr>
+<tr><td>Pharaohs of Egypt</td><td>Imperial rulers.</td></tr>
+<tr><td>MASHAH (Moses)</td><td>Deliverer and lawgiver.</td></tr>
+<tr><td>AARAN (Aaron)</td><td>Priesthood leadership.</td></tr>
+<tr><td>YAHASHAWA (Joshua)</td><td>Conquest leadership.</td></tr>
+<tr><td>Judges</td><td>Tribal leaders before monarchy.</td></tr>
+<tr><td>SHAWAL (Saul)</td><td>First king.</td></tr>
+<tr><td>DAWAD (David)</td><td>United kingdom king.</td></tr>
+<tr><td>SHALAMAH (Solomon)</td><td>Temple builder.</td></tr>
+<tr><td>Prophets</td><td>Covenant warning voices.</td></tr>
+</tbody></table></div>
+<div class="h2">WHAT HAPPENED AFTER THE CREATION OF THE TRIBES</div>
+<p>The major developments were migration into Egypt, famine survival, population multiplication, Egyptian oppression, forced labor systems, Exodus deliverance, covenant law establishment, wilderness wandering, conquest of Canaan, tribal land inheritance, Judges era instability, united kingdom formation, Temple construction, kingdom division, and increasing idolatry and rebellion.</p>
+<div class="h2">WHERE DID THESE EVENTS OCCUR</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Egypt</td><td>Bondage and Exodus.</td></tr>
+<tr><td>Sinai wilderness</td><td>Covenant law giving.</td></tr>
+<tr><td>Jordan region</td><td>Entry into Canaan.</td></tr>
+<tr><td>Canaan</td><td>Tribal inheritance.</td></tr>
+<tr><td>Jerusalem</td><td>Kingdom capital.</td></tr>
+<tr><td>Samaria</td><td>Northern kingdom capital.</td></tr>
+<tr><td>Judah region</td><td>Southern kingdom territory.</td></tr>
+</tbody></table></div>
+<div class="h2">WHEN DID THIS OCCUR</div>
+<p>The major sequence is migration into Egypt, Egyptian expansion period, bondage era, Exodus, wilderness period, conquest era, Judges period, united kingdom, and divided kingdom. Disputes remain regarding Exodus dating, Pharaoh identification, conquest chronology, and synchronization with Egypt.</p>
+<div class="h2">WHY DID THESE EVENTS MATTER</div>
+<p>This period establishes covenant law, national identity, priesthood systems, kingdom governance, military structure, and covenant accountability. It also establishes the blessings for obedience and the judgments for rebellion.</p>
+<div class="h2">GOOD PERSPECTIVE</div>
+<p>From the covenant perspective, YAHAWAH delivers the tribes from bondage, covenant law is established, inheritance is distributed, and the nation receives opportunity for blessing.</p>
+<div class="h2">SCRIPTURE WITNESS - EXODUS 19:5-6</div>
+<p>Now therefore, if you will obey my voice indeed, and keep my covenant, then you shall be a peculiar treasure unto me above all people... And you shall be unto me a kingdom of priests, and an holy nation...</p>
+<div class="h2">EVIL PERSPECTIVE</div>
+<p>From opposing systems&#x27; perspective, YASHARA&#x27;AL represented a growing national power, territorial expansion threatened regional kingdoms, covenant separation challenged surrounding worship systems, and later internal corruption weakened the nation.</p>
+<div class="h2">MIGRATION INTO EGYPT</div>
+<p>The tribes migrated into Egypt during famine conditions after YAWASAP rose to administrative authority.</p>
+<div class="h2">SCRIPTURE WITNESS - GENESIS 46:3</div>
+<p>Fear not to go down into Egypt; for I will there make of you a great nation.</p>
+<div class="h2">POPULATION GROWTH</div>
+<p>The tribes multiplied rapidly in Egypt.</p>
+<div class="h2">SCRIPTURE WITNESS - EXODUS 1:7</div>
+<p>And the children of Israel were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty...</p>
+<div class="h2">EGYPTIAN BONDAGE</div>
+<p>A later Pharaoh feared population expansion, military alliance potential, and internal instability.</p>
+<div class="h2">SCRIPTURE WITNESS - EXODUS 1:10</div>
+<p>Come on, let us deal wisely with them; lest they multiply...</p>
+<div class="h2">THE EXODUS</div>
+<p>The Exodus represents mass deliverance from Egypt, judgment upon Egypt, and covenant separation.</p>
+<div class="h2">SCRIPTURE WITNESS - EXODUS 12:41</div>
+<p>...all the hosts of the LORD went out from the land of Egypt.</p>
+<div class="h2">THE COVENANT LAW SYSTEM</div>
+<p>At Sinai, the tribes received covenant law, priesthood structure, sacrificial systems, feast days, civil law, and national governance structure.</p>
+<div class="h2">WILDERNESS PERIOD</div>
+<p>The wilderness period resulted from rebellion, unbelief, and covenant disobedience.</p>
+<div class="h2">SCRIPTURE WITNESS - NUMBERS 14:33</div>
+<p>And your children shall wander in the wilderness forty years...</p>
+<div class="h2">CONQUEST, INHERITANCE, JUDGES, AND KINGDOM</div>
+<p>Under YAHASHAWA (Joshua), the tribes entered Canaan and began territorial conquest and inheritance distribution. The Judges period involved decentralized tribal governance, repeated rebellion, foreign oppression, repentance cycles, and temporary deliverers. The united kingdom later formed through SHAWAL, DAWAD, and SHALAMAH. After SHALAMAH, the kingdom divided into the Northern Kingdom and Southern Kingdom.</p>
+<div class="h2">CONTROLLED CONCLUSION</div>
+<p>After the creation of the tribes, YASHARA&#x27;AL developed from a covenant family structure into a national kingdom system. This transformation included Egyptian bondage, covenant law, territorial inheritance, monarchy, and eventual division. The later captivities and scatterings emerge directly from the covenant structure established during this era.</p></section><section class="doc-section visible" id="unit-4"><div class="section-divider"><span class="section-num">UNIT 4</span><div class="section-title">WHAT HAPPENED TO THE TRIBES THAT MADE YAHAWAH PUNISH YASHARA&#x27;AL FOR 400 YEARS</div></div><div class="h2">FOUNDATIONAL FRAMEWORK</div>
+<p>The punishment and judgment upon YASHARA&#x27;AL is presented in scripture as the result of covenant violations. According to the biblical framework, the tribes entered into a covenant agreement with YAHAWAH that included blessings for obedience and curses for rebellion. The later captivities, oppression, scattering, and long-term affliction are described throughout scripture as covenant judgment tied to idolatry, rebellion, bloodshed, injustice, foreign worship, and rejection of covenant law.</p>
+<div class="h2">WHO</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>The 12 Tribes of YASHARA&#x27;AL</td><td>Covenant nation.</td></tr>
+<tr><td>Prophets</td><td>Warning messengers.</td></tr>
+<tr><td>Kings of Israel and Judah</td><td>National leadership.</td></tr>
+<tr><td>Assyria</td><td>Northern kingdom conqueror.</td></tr>
+<tr><td>Babylon</td><td>Southern kingdom conqueror.</td></tr>
+<tr><td>Egypt</td><td>Earlier bondage system.</td></tr>
+<tr><td>Surrounding nations</td><td>Foreign influence and warfare.</td></tr>
+<tr><td>Priests</td><td>Covenant leadership responsibility.</td></tr>
+</tbody></table></div>
+<div class="h2">WHAT DID THE TRIBES DO</div>
+<p>According to scripture, the tribes increasingly engaged in idol worship, Baal worship, child sacrifice, covenant rejection, Sabbath violations, injustice, oppression, corruption, bloodshed, political compromise, foreign alliances, and adoption of surrounding religious systems.</p>
+<div class="h2">WHERE DID THESE EVENTS OCCUR</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Northern Kingdom (Israel)</td><td>Expansion of idolatry.</td></tr>
+<tr><td>Southern Kingdom (Judah)</td><td>Temple corruption and rebellion.</td></tr>
+<tr><td>Jerusalem</td><td>Leadership corruption.</td></tr>
+<tr><td>Samaria</td><td>Northern kingdom apostasy.</td></tr>
+<tr><td>High places throughout the land</td><td>Idol worship systems.</td></tr>
+<tr><td>Assyria</td><td>Northern captivity destination.</td></tr>
+<tr><td>Babylon</td><td>Southern captivity destination.</td></tr>
+</tbody></table></div>
+<div class="h2">WHEN DID THIS OCCUR</div>
+<p>Major sequence: Judges period instability, united kingdom, Solomon&#x27;s compromises, kingdom division, expansion of idolatry, prophetic warnings, Assyrian captivity, Babylonian captivity, and continued scattering.</p>
+<div class="h2">WHY DID YAHAWAH PUNISH YASHARA&#x27;AL</div>
+<p>According to the covenant framework, judgment resulted from covenant rebellion. The punishments were intended to correct, humble, scatter, and discipline the nation.</p>
+<div class="h2">GOOD PERSPECTIVE</div>
+<p>From the covenant perspective, the punishment is corrective judgment, the covenant remains active, repentance remains possible, and restoration is later promised. The prophets consistently teach judgment is not the final stage and restoration remains possible after repentance.</p>
+<div class="h2">SCRIPTURE WITNESS - LEVITICUS 26:40-42</div>
+<p>If they shall confess their iniquity... then will I remember my covenant with Jacob...</p>
+<div class="h2">EVIL PERSPECTIVE</div>
+<p>From the rebellious perspective, political power became prioritized over covenant obedience, foreign systems were embraced, worship systems became corrupted, and national leadership repeatedly ignored prophetic warnings. Surrounding nations viewed YASHARA&#x27;AL&#x27;s weakening as opportunity for conquest, expansion, and domination.</p>
+<div class="h2">SOLOMON&#x27;S COMPROMISES</div>
+<p>Scripture describes foreign marriages introducing foreign worship systems into the kingdom.</p>
+<div class="h2">SCRIPTURE WITNESS - 1 KINGS 11:4</div>
+<p>For it came to pass, when Solomon was old, that his wives turned away his heart after other gods...</p>
+<div class="h2">IDOL WORSHIP</div>
+<p>Scripture describes Baal worship, Ashtoreth worship, Molech worship, sacred groves, high places, and child sacrifice practices.</p>
+<div class="h2">SCRIPTURE WITNESS - JEREMIAH 19:5</div>
+<p>They have built also the high places of Baal, to burn their sons with fire...</p>
+<div class="h2">REJECTION OF COVENANT LAW</div>
+<p>The tribes repeatedly violated commandments, statutes, Sabbaths, feast observances, and covenant obligations.</p>
+<div class="h2">SCRIPTURE WITNESS - EZEKIEL 20:13</div>
+<p>But the house of Israel rebelled against me in the wilderness... they despised my judgments...</p>
+<div class="h2">SOCIAL CORRUPTION</div>
+<p>The prophets condemn oppression, bribery, false judgment, exploitation of the poor, and violence.</p>
+<div class="h2">SCRIPTURE WITNESS - AMOS 5:12</div>
+<p>For I know your manifold transgressions and your mighty sins: they afflict the just, they take a bribe...</p>
+<div class="h2">ASSYRIAN CAPTIVITY</div>
+<p>Assyria conquered the northern kingdom and deported populations.</p>
+<div class="h2">SCRIPTURE WITNESS - 2 KINGS 17:6</div>
+<p>...the king of Assyria took Samaria, and carried Israel away into Assyria...</p>
+<div class="h2">BABYLONIAN CAPTIVITY</div>
+<p>Babylon later conquered Jerusalem, destroyed the Temple, and deported leadership and population groups. 2 Chronicles 36:17-20 describes destruction, captivity, and deportation into Babylon.</p>
+<div class="h2">THE 400 YEARS DISCUSSION</div>
+<p>Some interpret the 400 years primarily through Genesis 15:13, Egyptian bondage, and later captivity patterns. Others apply the 400-year framework prophetically to trans-Atlantic slavery, diaspora oppression, and later global scattering. This interpretation remains disputed among theological groups, historians, and academic scholars.</p>
+<div class="h2">CONTROLLED CONCLUSION</div>
+<p>According to scripture, YASHARA&#x27;AL&#x27;s punishment resulted from covenant rebellion involving idolatry, covenant violations, injustice, and rejection of divine law. The resulting judgments included captivity, oppression, territorial loss, and scattering among nations.</p></section><section class="doc-section visible" id="unit-5"><div class="section-divider"><span class="section-num">UNIT 5</span><div class="section-title">THE 400-YEAR PROPHECY AND THE 430-YEAR REFERENCE</div></div><div class="h2">FOUNDATIONAL FRAMEWORK</div>
+<p>One of the most debated chronological subjects in biblical history is the relationship between the 400-year prophecy and the 430-year reference. The debate centers on when the counting begins, where the counting occurs, whether the time includes Canaan, whether the time applies only to Egypt, and how different manuscripts and translations handle the chronology.</p>
+<div class="h2">WHO</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>ABARAHAM (Abraham)</td><td>Recipient of the prophecy.</td></tr>
+<tr><td>YATZACHQ (Isaac)</td><td>Covenant continuation.</td></tr>
+<tr><td>YAQAB (Jacob/YASHARA&#x27;AL)</td><td>Tribal father.</td></tr>
+<tr><td>Children of YASHARA&#x27;AL</td><td>Afflicted seed.</td></tr>
+<tr><td>Pharaohs of Egypt</td><td>Oppressive rulers.</td></tr>
+<tr><td>MASHAH (Moses)</td><td>Exodus leader.</td></tr>
+<tr><td>Paul</td><td>Later New Testament chronological reference.</td></tr>
+</tbody></table></div>
+<div class="h2">WHAT IS THE 400-YEAR PROPHECY</div>
+<p>Genesis 15:13 describes affliction, servitude, and stranger status.</p>
+<div class="h2">SCRIPTURE WITNESS - GENESIS 15:13</div>
+<p>Know of a surety that your seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.</p>
+<div class="h2">WHAT IS THE 430-YEAR REFERENCE</div>
+<p>Exodus 12:40-41 becomes central to the debate over whether the 430 years occurred entirely in Egypt or whether the count includes time spent in Canaan.</p>
+<div class="h2">SCRIPTURE WITNESS - EXODUS 12:40-41</div>
+<p>Now the sojourning of the children of Israel, who dwelt in Egypt, was four hundred and thirty years. And it came to pass at the end of the four hundred and thirty years... all the hosts of the LORD went out from the land of Egypt.</p>
+<div class="h2">WHERE DOES THE DISAGREEMENT COME FROM</div>
+<p>The disagreement comes from manuscript differences, chronology calculations, wording interpretation, and the definition of sojourning. Major differences exist between Masoretic Text readings, Septuagint readings, and Samaritan Pentateuch readings.</p>
+<div class="h2">MAJOR POSITION 1 - 215 YEARS IN CANAAN + 215 YEARS IN EGYPT</div>
+<p>This position argues the 430 years includes both Canaan and Egypt, and the actual Egyptian stay lasted approximately 215 years. This interpretation is supported by Septuagint wording, Samaritan Pentateuch wording, Galatians 3:17, and certain genealogical calculations.</p>
+<p>Galatians 3:17 says: And this I say, that the covenant, that was confirmed before of God in Christ, the law, which was four hundred and thirty years after...</p>
+<p>Supporters argue Paul begins counting from ABARAHAM&#x27;s covenant, not from entry into Egypt alone.</p>
+<div class="h2">GOOD PERSPECTIVE OF POSITION 1</div>
+<p>Supporters believe scripture harmonizes internally, the covenant timeline begins with ABARAHAM, and the affliction period includes time in Canaan before Egypt.</p>
+<div class="h2">EVIL PERSPECTIVE CRITIQUE OF POSITION 1</div>
+<p>Critics argue this interpretation weakens the plain reading of Exodus 12, relies too heavily on alternate manuscripts, and compresses Egyptian chronology artificially.</p>
+<div class="h2">MAJOR POSITION 2 - FULL 430 YEARS IN EGYPT</div>
+<p>This position argues the Israelites remained in Egypt for the full 430 years. Supporters emphasize the plain reading of Exodus 12, traditional Masoretic wording, and direct interpretation of dwelt in Egypt.</p>
+<div class="h2">GOOD PERSPECTIVE OF POSITION 2</div>
+<p>Supporters believe the straightforward reading should remain primary, and chronology should not be adjusted through indirect calculations.</p>
+<div class="h2">EVIL PERSPECTIVE CRITIQUE OF POSITION 2</div>
+<p>Critics argue this position creates genealogical compression problems and ignores manuscript evidence from older textual traditions.</p>
+<div class="h2">THE 400 YEARS VS THE 430 YEARS</div>
+<p>Many interpreters distinguish the numbers this way: 400 years is associated with the affliction period; 430 years is associated with total sojourning period.</p>
+<div class="h2">ACTS 7:6</div>
+<p>...that his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.</p>
+<div class="h2">CONTROLLED CONCLUSION</div>
+<p>The 400-year prophecy and the 430-year reference remain one of the most debated chronological subjects in scripture. The two primary interpretations are 215 years in Canaan plus 215 years in Egypt, and full 430 years in Egypt. The disagreement centers on manuscript traditions, chronology methods, genealogical interpretation, and how sojourning is defined.</p></section><section class="doc-section visible" id="unit-6"><div class="section-divider"><span class="section-num">UNIT 6</span><div class="section-title">WHERE WERE THE TRIBES SCATTERED</div></div><div class="h2">FOUNDATIONAL FRAMEWORK</div>
+<p>The scattering of the Tribes of YASHARA&#x27;AL occurred across multiple historical periods through conquest, captivity, migration, trade, exile, warfare, imperial deportation systems, and diaspora expansion. According to scripture, scattering was part of covenant judgment connected to disobedience, rebellion, idolatry, and covenant violations.</p>
+<div class="h2">WHO</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Northern Kingdom tribes</td><td>First major scattered population.</td></tr>
+<tr><td>Southern Kingdom tribes</td><td>Later captive population.</td></tr>
+<tr><td>Assyrians</td><td>Northern deportation empire.</td></tr>
+<tr><td>Babylonians</td><td>Southern deportation empire.</td></tr>
+<tr><td>Persians</td><td>Imperial administrators.</td></tr>
+<tr><td>Greeks</td><td>Hellenization empire.</td></tr>
+<tr><td>Romans</td><td>Jerusalem destroyers and dispersers.</td></tr>
+<tr><td>African kingdoms</td><td>Refuge and migration regions.</td></tr>
+<tr><td>European kingdoms</td><td>Later dispersion zones.</td></tr>
+<tr><td>Arab powers</td><td>Trade and migration systems.</td></tr>
+</tbody></table></div>
+<div class="h2">WHAT CAUSED THE SCATTERING</div>
+<p>According to scripture, covenant rebellion triggered judgment. Historically, conquest, forced migration, deportation, trade systems, warfare, slavery, and empire expansion contributed to the dispersions.</p>
+<div class="h2">WHERE WERE THE TRIBES SCATTERED</div>
+<p>Major scattering regions included Assyria, Babylon, Persia, Egypt, North Africa, Arabia, Greece, Rome, Europe, Sub-Saharan Africa, Asia Minor, Mediterranean territories, and the Americas through later diaspora systems according to some interpretations.</p>
+<div class="h2">WHEN DID THE SCATTERINGS OCCUR</div>
+<p>Major sequence: Assyrian captivity, Babylonian captivity, Persian dispersion administration, Greek Hellenization period, Roman destruction and exile, medieval dispersions, colonial-era forced migrations, and modern global diaspora.</p>
+<div class="h2">WHY WERE THE TRIBES SCATTERED</div>
+<p>According to scripture, scattering fulfilled covenant judgment warnings.</p>
+<div class="h2">SCRIPTURE WITNESS - DEUTERONOMY 28:64</div>
+<p>And the LORD shall scatter you among all people, from the one end of the earth even unto the other...</p>
+<div class="h2">GOOD PERSPECTIVE</div>
+<p>From the covenant perspective, scattering is judgment but not total destruction, and restoration remains possible. Many prophetic passages teach regathering follows scattering.</p>
+<div class="h2">SCRIPTURE WITNESS - EZEKIEL 11:17</div>
+<p>I will even gather you from the people, and assemble you out of the countries where you have been scattered...</p>
+<div class="h2">EVIL PERSPECTIVE</div>
+<p>From imperial and opposing systems&#x27; perspectives, scattering weakened national identity, reduced military resistance, increased imperial control, and disrupted covenant continuity. Many empires used forced migration, population replacement, and cultural assimilation as political tools.</p>
+<div class="h2">ASSYRIA</div>
+<p>The northern kingdom was conquered and deported by Assyria. 2 Kings 17:6 says the king of Assyria took Samaria and carried Israel away into Assyria. The deported populations experienced forced relocation, cultural mixing, imperial resettlement, and loss of centralized tribal governance.</p>
+<div class="h2">BABYLON</div>
+<p>Babylon conquered Judah and Jerusalem. The Temple was destroyed. Leadership and population groups were deported. In Babylon, captives lived under imperial administration, some rose into government service, and community identity partially remained intact.</p>
+<div class="h2">PERSIA</div>
+<p>Persia conquered Babylon and permitted partial returns. Under Persia, diaspora communities continued existing across the empire, while partial restoration occurred in Jerusalem.</p>
+<div class="h2">GREECE</div>
+<p>Alexander&#x27;s conquest introduced Hellenization, Greek language spread, and cultural transformation. Greek influence affected language, education, politics, and religious practices.</p>
+<div class="h2">ROME</div>
+<p>Rome conquered Jerusalem and later destroyed the Second Temple. After 70 CE and later 135 CE, major dispersions expanded throughout the Roman Empire, North Africa, Europe, and the Mediterranean.</p>
+<div class="h2">EGYPT AND NORTH AFRICA</div>
+<p>Hebrew/Jewish populations existed throughout Egypt, Ethiopia, Cyrene, Libya, and broader North African territories. Communities developed through trade, military service, religious communities, and diaspora settlements.</p>
+<div class="h2">ARABIA</div>
+<p>Diaspora communities spread into Arabian territories through trade, migration, exile, and regional movement.</p>
+<div class="h2">EUROPE</div>
+<p>Jewish/Hebrew populations later spread throughout Iberia, France, Italy, Germany, Eastern Europe, and broader European territories. Major later events included expulsions, persecution, ghettos, and forced migrations.</p>
+<div class="h2">ASIA MINOR AND THE MEDITERRANEAN</div>
+<p>Diaspora communities existed throughout Asia Minor, Greek territories, Roman provinces, and Mediterranean trade centers.</p>
+<div class="h2">SUB-SAHARAN AFRICA</div>
+<p>Some traditions and researchers argue portions of scattered Israelites migrated deeper into Africa over centuries. Others dispute tribal continuity claims, chronology, and ethnic identification conclusions. This subject remains heavily debated historically and politically.</p>
+<div class="h2">TRANS-ATLANTIC SLAVE TRADE INTERPRETATION</div>
+<p>Some Hebrew Israelite groups interpret Deuteronomy 28, slave ship references, and diaspora oppression as connected to the trans-Atlantic slave trade. Critics argue insufficient direct historical evidence exists linking all transported populations specifically to ancient Israelite tribes.</p>
+<div class="h2">CONTROLLED CONCLUSION</div>
+<p>The tribes of YASHARA&#x27;AL experienced multiple waves of scattering through conquest, captivity, migration, imperial deportation, warfare, and diaspora expansion. Scripture presents scattering as covenant judgment, while historical evidence confirms repeated dispersions across multiple empires and centuries.</p></section><section class="doc-section visible" id="unit-7"><div class="section-divider"><span class="section-num">UNIT 7</span><div class="section-title">WHERE ARE THE TRIBES TODAY</div></div><div class="h2">FOUNDATIONAL FRAMEWORK</div>
+<p>The question of where the Tribes of YASHARA&#x27;AL are today is one of the most disputed subjects in biblical history, theology, archaeology, genealogy, and modern identity studies. Major disagreements involve tribal continuity, migration history, ethnic identity, covenant lineage, conversion, assimilation, diaspora history, and prophetic interpretation.</p>
+<div class="h2">WHO</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Jewish communities worldwide</td><td>Historical covenant continuity.</td></tr>
+<tr><td>Hebrew Israelite groups</td><td>Tribal redistribution interpretations.</td></tr>
+<tr><td>Academic historians</td><td>Historical-critical analysis.</td></tr>
+<tr><td>African diaspora groups</td><td>Identity restoration interpretations.</td></tr>
+<tr><td>Religious theologians</td><td>Spiritual covenant interpretations.</td></tr>
+<tr><td>Genetic researchers</td><td>Population ancestry studies.</td></tr>
+</tbody></table></div>
+<div class="h2">WHAT IS THE CORE QUESTION</div>
+<p>The central question is which modern populations, if any, directly descend from the ancient Tribes of YASHARA&#x27;AL. Related questions include whether all tribes were preserved, whether some assimilated, whether tribal identities disappeared, whether populations scattered globally, whether tribal lineage can still be identified, and whether covenant identity is biological, spiritual, or both.</p>
+<div class="h2">WHERE ARE CLAIMED DESCENDANT POPULATIONS TODAY</div>
+<p>Major claimed descendant regions include Modern Israel, Middle East, North Africa, Ethiopia, West Africa, Europe, Caribbean, North America, South America, and Asia. Different traditions emphasize different regions.</p>
+<div class="h2">WHEN DID THESE IDENTIFICATION CLAIMS DEVELOP</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Ancient period</td><td>Tribal continuity claims.</td></tr>
+<tr><td>Roman period</td><td>Diaspora expansion.</td></tr>
+<tr><td>Medieval period</td><td>Community preservation.</td></tr>
+<tr><td>Colonial period</td><td>Migration disruptions.</td></tr>
+<tr><td>19th-20th century</td><td>Modern identity movements.</td></tr>
+<tr><td>Modern era</td><td>DNA and historical debates.</td></tr>
+</tbody></table></div>
+<div class="h2">WHY IS THIS SUBJECT IMPORTANT</div>
+<p>The subject affects covenant theology, prophecy interpretation, national identity, religious legitimacy, land claims, diaspora history, and restoration movements.</p>
+<div class="h2">GOOD PERSPECTIVE</div>
+<p>From covenant restoration perspectives, the tribes were scattered but not destroyed, identity survived in various forms, and restoration remains possible. Many restoration-oriented groups believe prophecy requires eventual regathering and awakening.</p>
+<div class="h2">SCRIPTURE WITNESS - JEREMIAH 31:10</div>
+<p>Hear the word of the LORD, O you nations, and declare it in the isles afar off, and say, He that scattered Israel will gather him...</p>
+<div class="h2">EVIL PERSPECTIVE</div>
+<p>From opposing or skeptical perspectives, tribal continuity became impossible to trace, intermixing dissolved distinct identities, and many modern identity claims rely on weak or selective evidence. Some critics argue later identity movements are primarily theological or political constructions rather than provable lineage continuities.</p>
+<div class="h2">MAJOR POSITION 1 - MAINSTREAM JEWISH CONTINUITY POSITION</div>
+<p>This position argues modern Jewish populations preserve continuity from ancient Israelites through historical survival, diaspora continuity, religion, and community preservation. Critics argue tribal distinctions largely disappeared, diaspora mixing complicates lineage certainty, and some communities may reflect conversion as well as ancestry.</p>
+<div class="h2">MAJOR POSITION 2 - HEBREW ISRAELITE POSITION</div>
+<p>Many Hebrew Israelite groups argue scattered Israelites today exist primarily among populations affected by slavery, colonialism, and diaspora oppression. Some groups identify African diaspora populations, Caribbean populations, and portions of the Americas as descendants of scattered tribes. Critics argue direct historical continuity evidence is limited, interpretations are often theological, and large-scale population claims exceed currently verified historical evidence.</p>
+<div class="h2">MAJOR POSITION 3 - ACADEMIC HISTORICAL POSITION</div>
+<p>Many academic historians argue ancient Israelite populations became heavily mixed over centuries, tribal distinctions largely dissolved, and modern populations cannot be definitively matched tribe-by-tribe. Academic approaches emphasize archaeology, inscriptions, migration patterns, and population history.</p>
+<div class="h2">MAJOR POSITION 4 - ETHIOPIAN / AFRICAN CONTINUITY POSITIONS</div>
+<p>Certain traditions claim ancient Israelite populations migrated into Africa, preserving elements of covenant tradition and identity. Examples include Beta Israel traditions in Ethiopia. Critics argue evidence varies significantly by community, some traditions developed later, and continuity claims remain difficult to prove conclusively.</p>
+<div class="h2">MAJOR POSITION 5 - SPIRITUAL ISRAEL INTERPRETATION</div>
+<p>Some Christian theological traditions argue covenant identity becomes spiritual rather than tribal or ethnic. Critics argue this interpretation minimizes historical tribal identity and disconnects covenant promises from literal descendants.</p>
+<div class="h2">DNA AND GENETIC DEBATES</div>
+<p>Modern genetic studies examine population ancestry, migration patterns, and regional relationships. However, DNA cannot universally identify specific biblical tribes with certainty.</p>
+<div class="h2">CONTROLLED CONCLUSION</div>
+<p>The question of where the Tribes of YASHARA&#x27;AL are today remains highly disputed among religious traditions, historians, genetic researchers, and identity movements. Historical evidence confirms repeated diaspora events, global dispersions, and long-term population mixing. Exact tribal identification remains debated, and no single position has universal acceptance across all disciplines and traditions.</p></section><section class="doc-section visible" id="audit"><div class="section-divider"><span class="section-num">APPENDIX</span><div class="section-title">MASTER SOURCE APPENDIX AND FINAL AUDIT</div></div><div class="h2">MASTER SOURCE APPENDIX</div>
+<p>SCRIPTURAL SOURCES</p>
+<p>Genesis 10; Genesis 11; Genesis 12; Genesis 15; Genesis 17; Genesis 32; Genesis 35; Genesis 46; Genesis 49; Exodus 1; Exodus 12; Exodus 19; Exodus 20; Leviticus 26; Numbers 14; Deuteronomy 10; Deuteronomy 28; Joshua; Judges; 1 Samuel; 1 Kings 11; 1 Kings 12; 2 Kings 17; 2 Chronicles 36; Ezra 1; Jeremiah 30; Jeremiah 31; Ezekiel 11; Ezekiel 20; Ezekiel 37; Amos 5; Matthew 24; Acts 7; Galatians 3; 1611 KJV.</p>
+<div class="h2">HISTORICAL / COMPARATIVE SOURCES TO INCLUDE</div>
+<p>Josephus, Antiquities of the Jews; Assyrian deportation records; Babylonian captivity records; Persian imperial return-period records; Septuagint textual tradition; Samaritan Pentateuch textual tradition; Roman historical records on Judea; Ancient Near Eastern tribal studies; Egyptian dynastic chronology studies; Canaanite city-state archaeology; Jewish diaspora history; African Hebrew/Jewish community studies; Mediterranean migration studies; genetic ancestry research limited to population-level discussion only.</p>
+<div class="h2">FINAL AUDIT</div>
+<div class="table-wrap"><table><thead><tr><th>ITEM</th><th>DETAIL</th></tr></thead><tbody>
+<tr><td>Template structure followed</td><td>PASS.</td></tr>
+<tr><td>Uploaded questions answered</td><td>PASS.</td></tr>
+<tr><td>WHO / WHAT / WHERE / WHEN / WHY applied</td><td>PASS.</td></tr>
+<tr><td>Good and Evil perspectives included</td><td>PASS.</td></tr>
+<tr><td>Neutral handling of disputed claims</td><td>PASS.</td></tr>
+<tr><td>No raw HTML tags displayed</td><td>PASS.</td></tr>
+<tr><td>Source appendix included</td><td>PASS.</td></tr>
+<tr><td>400 vs 430 years addressed</td><td>PASS.</td></tr>
+<tr><td>Scattering locations addressed</td><td>PASS.</td></tr>
+<tr><td>Modern identity positions addressed</td><td>PASS.</td></tr>
+<tr><td>No universal tribal-location claim overstated</td><td>PASS.</td></tr>
+</tbody></table></div></section></main></div>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button><script>function scrollToAnchor(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('progressFill').style.width=Math.min(100,window.scrollY/h*100)+'%';document.getElementById('scrollTopBtn').classList.toggle('visible',window.scrollY>400);});</script></body></html>
