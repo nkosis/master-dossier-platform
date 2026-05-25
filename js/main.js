@@ -1,1 +1,311 @@
-function scrollToAnchor(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}function applySidebarState(collapsed){const layout=document.getElementById('layout');if(!layout)return;layout.classList.toggle('sidebar-collapsed',collapsed);localStorage.setItem('mdpSidebarCollapsed',collapsed?'1':'0')}function toggleSidebar(){const layout=document.getElementById('layout');const collapsed=layout.classList.contains('sidebar-collapsed');applySidebarState(!collapsed)}const sectionIds=['home','featured','categories','workflow','deployment'];const sectionNames=['Home','Featured','Categories','Workflow','Deployment'];const progressFill=document.getElementById('progressFill');const sectionIndicator=document.getElementById('sectionIndicator');const scrollTopBtn=document.getElementById('scrollTopBtn');function onScroll(){const scrollTop=window.scrollY;const docH=document.documentElement.scrollHeight-window.innerHeight;if(progressFill&&docH>0){progressFill.style.width=Math.min(100,(scrollTop/docH*100)).toFixed(1)+'%'}if(scrollTopBtn){scrollTopBtn.classList.toggle('visible',scrollTop>400)}let active=0;sectionIds.forEach((id,i)=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)active=i});if(sectionIndicator)sectionIndicator.textContent=sectionNames[active];document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));const nav=document.getElementById('nav-'+sectionIds[active]);if(nav)nav.classList.add('active')}function initVisibilityObserver(){const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.03});document.querySelectorAll('.doc-section').forEach(s=>observer.observe(s))}document.addEventListener('DOMContentLoaded',()=>{const stored=localStorage.getItem('mdpSidebarCollapsed');applySidebarState(stored==='1');const btn=document.getElementById('sidebarToggle');if(btn)btn.addEventListener('click',toggleSidebar);window.addEventListener('scroll',onScroll,{passive:true});initVisibilityObserver();onScroll()});
+function scrollToAnchor(id) {
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
+/* =========================================
+   SIDEBAR TOGGLE
+========================================= */
+
+function applySidebarState(collapsed) {
+
+  const layout = document.getElementById('layout');
+
+  if (!layout) return;
+
+  layout.classList.toggle('sidebar-collapsed', collapsed);
+
+  localStorage.setItem(
+    'mdpSidebarCollapsed',
+    collapsed ? '1' : '0'
+  );
+}
+
+function toggleSidebar() {
+
+  const layout = document.getElementById('layout');
+
+  if (!layout) return;
+
+  const collapsed =
+    layout.classList.contains('sidebar-collapsed');
+
+  applySidebarState(!collapsed);
+}
+
+/* =========================================
+   SCROLL TRACKING
+========================================= */
+
+const sectionIds = [
+  'home',
+  'featured',
+  'categories',
+  'workflow',
+  'deployment'
+];
+
+const sectionNames = [
+  'HOME',
+  'FEATURED',
+  'CATEGORIES',
+  'WORKFLOW',
+  'DEPLOYMENT'
+];
+
+const progressFill =
+  document.getElementById('progressFill');
+
+const sectionIndicator =
+  document.getElementById('sectionIndicator');
+
+const scrollTopBtn =
+  document.getElementById('scrollTopBtn');
+
+function onScroll() {
+
+  const scrollTop = window.scrollY;
+
+  const documentHeight =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  /* PROGRESS BAR */
+
+  if (progressFill && documentHeight > 0) {
+
+    const progress =
+      (scrollTop / documentHeight) * 100;
+
+    progressFill.style.width =
+      Math.min(progress, 100) + '%';
+  }
+
+  /* SCROLL TOP BUTTON */
+
+  if (scrollTopBtn) {
+
+    scrollTopBtn.classList.toggle(
+      'visible',
+      scrollTop > 400
+    );
+  }
+
+  /* ACTIVE SECTION */
+
+  let activeSection = 0;
+
+  sectionIds.forEach((id, index) => {
+
+    const section =
+      document.getElementById(id);
+
+    if (!section) return;
+
+    const rect =
+      section.getBoundingClientRect();
+
+    if (rect.top < 140) {
+      activeSection = index;
+    }
+  });
+
+  /* UPDATE SECTION LABEL */
+
+  if (sectionIndicator) {
+
+    sectionIndicator.textContent =
+      sectionNames[activeSection];
+  }
+
+  /* UPDATE SIDEBAR ACTIVE STATE */
+
+  document
+    .querySelectorAll('.nav-item')
+    .forEach(item => {
+      item.classList.remove('active');
+    });
+
+  const activeNav =
+    document.getElementById(
+      'nav-' + sectionIds[activeSection]
+    );
+
+  if (activeNav) {
+    activeNav.classList.add('active');
+  }
+}
+
+/* =========================================
+   SECTION FADE-IN
+========================================= */
+
+function initializeVisibilityObserver() {
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+
+      },
+
+      {
+        threshold: 0.03
+      }
+    );
+
+  document
+    .querySelectorAll('.doc-section')
+    .forEach(section => {
+      observer.observe(section);
+    });
+}
+
+/* =========================================
+   AUTO DOSSIER LOADER
+========================================= */
+
+async function loadDossiers() {
+
+  try {
+
+    const response =
+      await fetch('data/dossiers.json');
+
+    const dossiers =
+      await response.json();
+
+    const grid =
+      document.getElementById('dossierGrid');
+
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    dossiers.forEach(dossier => {
+
+      const card =
+        document.createElement('a');
+
+      card.className =
+        'dossier-card';
+
+      card.href =
+        `dossiers/${dossier.file}`;
+
+      card.innerHTML = `
+        <span class="card-kicker">
+          ${dossier.category}
+        </span>
+
+        <h2>
+          ${dossier.title}
+        </h2>
+
+        <p>
+          ${dossier.description}
+        </p>
+
+        <span class="card-link">
+          Open Dossier →
+        </span>
+      `;
+
+      grid.appendChild(card);
+    });
+
+  } catch (error) {
+
+    console.error(
+      'Failed to load dossiers:',
+      error
+    );
+  }
+}
+
+/* =========================================
+   INITIALIZATION
+========================================= */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+
+    /* RESTORE SIDEBAR STATE */
+
+    const storedState =
+      localStorage.getItem(
+        'mdpSidebarCollapsed'
+      );
+
+    applySidebarState(
+      storedState === '1'
+    );
+
+    /* SIDEBAR TOGGLE */
+
+    const sidebarToggle =
+      document.getElementById(
+        'sidebarToggle'
+      );
+
+    if (sidebarToggle) {
+
+      sidebarToggle.addEventListener(
+        'click',
+        toggleSidebar
+      );
+    }
+
+    /* SCROLL EVENTS */
+
+    window.addEventListener(
+      'scroll',
+      onScroll,
+      { passive: true }
+    );
+
+    /* SECTION OBSERVER */
+
+    initializeVisibilityObserver();
+
+    /* INITIAL SCROLL STATE */
+
+    onScroll();
+
+    /* LOAD DOSSIERS */
+
+    loadDossiers();
+  }
+);
+
+/* =========================================
+   SCROLL TOP BUTTON
+========================================= */
+
+if (scrollTopBtn) {
+
+  scrollTopBtn.addEventListener(
+    'click',
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  );
+}
