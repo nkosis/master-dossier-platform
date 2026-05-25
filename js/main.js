@@ -1,7 +1,10 @@
 function scrollToAnchor(id) {
-  const element = document.getElementById(id);
+
+  const element =
+    document.getElementById(id);
 
   if (element) {
+
     element.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
@@ -15,11 +18,15 @@ function scrollToAnchor(id) {
 
 function applySidebarState(collapsed) {
 
-  const layout = document.getElementById('layout');
+  const layout =
+    document.getElementById('layout');
 
   if (!layout) return;
 
-  layout.classList.toggle('sidebar-collapsed', collapsed);
+  layout.classList.toggle(
+    'sidebar-collapsed',
+    collapsed
+  );
 
   localStorage.setItem(
     'mdpSidebarCollapsed',
@@ -29,12 +36,15 @@ function applySidebarState(collapsed) {
 
 function toggleSidebar() {
 
-  const layout = document.getElementById('layout');
+  const layout =
+    document.getElementById('layout');
 
   if (!layout) return;
 
   const collapsed =
-    layout.classList.contains('sidebar-collapsed');
+    layout.classList.contains(
+      'sidebar-collapsed'
+    );
 
   applySidebarState(!collapsed);
 }
@@ -60,17 +70,24 @@ const sectionNames = [
 ];
 
 const progressFill =
-  document.getElementById('progressFill');
+  document.getElementById(
+    'progressFill'
+  );
 
 const sectionIndicator =
-  document.getElementById('sectionIndicator');
+  document.getElementById(
+    'sectionIndicator'
+  );
 
 const scrollTopBtn =
-  document.getElementById('scrollTopBtn');
+  document.getElementById(
+    'scrollTopBtn'
+  );
 
 function onScroll() {
 
-  const scrollTop = window.scrollY;
+  const scrollTop =
+    window.scrollY;
 
   const documentHeight =
     document.documentElement.scrollHeight -
@@ -78,7 +95,10 @@ function onScroll() {
 
   /* PROGRESS BAR */
 
-  if (progressFill && documentHeight > 0) {
+  if (
+    progressFill &&
+    documentHeight > 0
+  ) {
 
     const progress =
       (scrollTop / documentHeight) * 100;
@@ -116,7 +136,7 @@ function onScroll() {
     }
   });
 
-  /* UPDATE SECTION LABEL */
+  /* UPDATE LABEL */
 
   if (sectionIndicator) {
 
@@ -124,7 +144,7 @@ function onScroll() {
       sectionNames[activeSection];
   }
 
-  /* UPDATE SIDEBAR ACTIVE STATE */
+  /* UPDATE SIDEBAR ACTIVE */
 
   document
     .querySelectorAll('.nav-item')
@@ -156,7 +176,9 @@ function initializeVisibilityObserver() {
         entries.forEach(entry => {
 
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add(
+              'visible'
+            );
           }
         });
 
@@ -175,65 +197,129 @@ function initializeVisibilityObserver() {
 }
 
 /* =========================================
-   AUTO DOSSIER LOADER
+   DOSSIER DATA
 ========================================= */
 
-async function loadDossiers() {
+const dossiers = [
 
-  try {
+  {
+    title:
+      "The 12 Tribes of YASHARA'AL",
 
-    const response =
-      await fetch('data/dossiers.json');
+    file:
+      "THE_12_TRIBES_OF_YASHARAL_Interactive.html",
 
-    const dossiers =
-      await response.json();
+    category:
+      "TRIBES",
 
-    const grid =
-      document.getElementById('dossierGrid');
+    description:
+      "Interactive covenant and tribal dossier."
+  },
 
-    if (!grid) return;
+  {
+    title:
+      "DABARAYAM_28_Curses_Proof",
 
-    grid.innerHTML = '';
+    file:
+      "DABARAYAM (Deuteronomy)_28_Curses_Proof.html",
 
-    dossiers.forEach(dossier => {
+    category:
+      "PROPHECY",
 
-      const card =
-        document.createElement('a');
+    description:
+      "Judgment and fulfillment framework."
+  },
 
-      card.className =
-        'dossier-card';
+  {
+    title:
+      "DABARAYAM_28_Curses_Proof_MODERN_ERA_2006_2026",
 
-      card.href =
-        `dossiers/${dossier.file}`;
+    file:
+      "Deuteronomy_28_Curses_Proof_MODERN_ERA_2006_2026_v4.html",
 
-      card.innerHTML = `
-        <span class="card-kicker">
-          ${dossier.category}
-        </span>
+    category:
+      "PROPHECY",
 
-        <h2>
-          ${dossier.title}
-        </h2>
+    description:
+      "Judgment and fulfillment framework."
+  },
 
-        <p>
-          ${dossier.description}
-        </p>
+  {
+    title:
+      "Slavery_Effects_on_YASHARAAL",
 
-        <span class="card-link">
-          Open Dossier →
-        </span>
-      `;
+    file:
+      "Slavery_Effects_on_YASHARAAL_Dossier_v2_1.html",
 
-      grid.appendChild(card);
-    });
+    category:
+      "PROPHECY",
 
-  } catch (error) {
+    description:
+      "Judgment and fulfillment framework."
+  },
 
-    console.error(
-      'Failed to load dossiers:',
-      error
-    );
+  {
+    title:
+      "YASHARAAL_12_TRIBES_DOSSIER_UNIT_COMPILATION",
+
+    file:
+      "YASHARAAL_12_TRIBES_DOSSIER_UNIT_COMPILATION.html",
+
+    category:
+      "TRIBES",
+
+    description:
+      "Interactive covenant and tribal dossier."
   }
+
+];
+
+/* =========================================
+   LOAD DOSSIERS
+========================================= */
+
+function loadDossiers() {
+
+  const grid =
+    document.getElementById(
+      'dossierGrid'
+    );
+
+  if (!grid) return;
+
+  grid.innerHTML = '';
+
+  dossiers.forEach(dossier => {
+
+    const card =
+      document.createElement('a');
+
+    card.className =
+      'dossier-card';
+
+    card.href =
+      `dossiers/${dossier.file}`;
+
+    card.innerHTML = `
+      <span class="card-kicker">
+        ${dossier.category}
+      </span>
+
+      <h2>
+        ${dossier.title}
+      </h2>
+
+      <p>
+        ${dossier.description}
+      </p>
+
+      <span class="card-link">
+        Open Dossier →
+      </span>
+    `;
+
+    grid.appendChild(card);
+  });
 }
 
 /* =========================================
@@ -244,7 +330,7 @@ document.addEventListener(
   'DOMContentLoaded',
   () => {
 
-    /* RESTORE SIDEBAR STATE */
+    /* SIDEBAR STATE */
 
     const storedState =
       localStorage.getItem(
@@ -255,7 +341,7 @@ document.addEventListener(
       storedState === '1'
     );
 
-    /* SIDEBAR TOGGLE */
+    /* SIDEBAR BUTTON */
 
     const sidebarToggle =
       document.getElementById(
@@ -278,11 +364,11 @@ document.addEventListener(
       { passive: true }
     );
 
-    /* SECTION OBSERVER */
+    /* VISIBILITY */
 
     initializeVisibilityObserver();
 
-    /* INITIAL SCROLL STATE */
+    /* INITIAL SCROLL */
 
     onScroll();
 
