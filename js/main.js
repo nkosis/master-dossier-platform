@@ -207,7 +207,7 @@ const dossiers = [
       "The 12 Tribes of YASHARA'AL",
 
     file:
-      "THE_12_TRIBES_OF_YASHARAL_Interactive.html",
+      "the-12-tribes-of-yasharaal.html",
 
     category:
       "TRIBES",
