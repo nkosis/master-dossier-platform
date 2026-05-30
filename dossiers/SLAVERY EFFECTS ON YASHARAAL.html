@@ -155,24 +155,31 @@ tr:hover td { background:rgba(201,168,76,0.03); }
   transform:translateY(-1px);
 }
 
+
+.header-left{display:flex;align-items:center;gap:.5rem}
+.sidebar-toggle{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:transparent;border:1px solid rgba(201,168,76,.35);cursor:pointer;border-radius:3px;flex-shrink:0}
+.sidebar-toggle-bars,.sidebar-toggle-bars:before,.sidebar-toggle-bars:after{display:block;width:16px;height:2px;background:#C9A84C;content:"";position:relative}
+.sidebar-toggle-bars:before{position:absolute;top:-5px}
+.sidebar-toggle-bars:after{position:absolute;top:5px}
+
 </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="site-header-inner">
-
-     <a href="../index.html"
-       class="home-link">
-
-       HOME
-
-    </a>
-    
-    <span class="site-title">EFFECTS OF SLAVERY ON YASHARA&#39;AL &mdash; DOSSIER v2.1</span>
+    <div class="header-left">
+      <a href="../index.html" class="home-link">HOME</a>
+      <button class="sidebar-toggle" aria-label="Menu">
+        <span class="sidebar-toggle-bars"></span>
+      </button>
+    </div>
+    <span class="site-title">EFFECTS OF SLAVERY ON YASHARA'AL DOSSIER</span>
     <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill"></div></div>
     <span class="section-indicator" id="sectionIndicator">Foundation</span>
   </div>
 </header>
+
 <div class="layout">
 <nav class="sidebar" id="sidebar">
   <div class="nav-label">Navigate</div>
