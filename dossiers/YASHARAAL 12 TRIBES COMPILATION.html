@@ -23,6 +23,24 @@ html { scroll-padding-top: 64px; }
 body { font-family:'Crimson Pro',Georgia,serif; background:var(--bg-page); color:var(--text-primary); font-size:17px; line-height:1.75; }
 .site-header { position:sticky; top:0; z-index:100; background:var(--bg-divider); border-bottom:1px solid var(--border-bright); padding:0 2rem; }
 .site-header-inner { max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:54px; gap:1rem; }
+.home-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:6px 12px;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    text-decoration:none;
+    font-family:'Cinzel',serif;
+    font-size:11px;
+    letter-spacing:.12em;
+    white-space:nowrap;
+    transition:.2s;
+}
+.home-link:hover{
+    background:rgba(201,168,76,.12);
+}
+
 .site-title { font-family:'Cinzel',serif; font-size:12px; font-weight:600; color:var(--gold); letter-spacing:0.12em; white-space:nowrap; flex-shrink:0; }
 .progress-bar-wrap { flex:1; height:2px; background:rgba(255,255,255,0.05); border-radius:2px; overflow:hidden; max-width:200px; }
 .progress-bar-fill { height:100%; background:var(--gold); width:0%; transition:width 0.3s ease; }
@@ -123,7 +141,7 @@ tr:hover td { background:rgba(201,168,76,0.03); }
   .def-row { grid-template-columns:1fr; }
 }
 </style></head><body>
-<header class="site-header"><div class="site-header-inner"><span class="site-title">YASHARAAL DOSSIER</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill"></div></div><span class="section-indicator" id="sectionIndicator">Compilation</span></div></header>
+<header class="site-header"><div class="site-header-inner"><a href="../index.html" class="home-link">HOME</a><span class="site-title">YASHARAAL DOSSIER</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill"></div></div><span class="section-indicator" id="sectionIndicator">Compilation</span></div></header>
 <div class="layout"><nav class="sidebar"><div class="nav-label">Navigate</div><a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-1')"><span style="color:var(--gold-dim);margin-right:4px;">01</span>BEFORE THE CREATION OF THE 12 TRIBES OF YA</a>
 <a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-2')"><span style="color:var(--gold-dim);margin-right:4px;">02</span>WHAT HAPPENS AT THE CREATION OF THE 12 TRI</a>
 <a class="nav-sub entry-nav" onclick="scrollToAnchor('unit-3')"><span style="color:var(--gold-dim);margin-right:4px;">03</span>WHAT HAPPENED AFTER THE CREATION OF THE TR</a>
