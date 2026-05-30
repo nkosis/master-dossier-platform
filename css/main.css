@@ -187,6 +187,9 @@ body {
 ========================================= */
 
 .sidebar {
+  width: 260px;
+
+  min-width: 260px;
 
   position: sticky;
 
@@ -211,7 +214,15 @@ body {
 
 .layout.sidebar-collapsed .sidebar {
 
+  width: 0;
+
+  min-width: 0;
+
+  overflow: hidden;
+
   opacity: 0;
+
+  border-right: none;
 
   transform: translateX(-100%);
 
