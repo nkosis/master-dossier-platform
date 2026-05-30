@@ -270,7 +270,7 @@ const dossiers = [
 
     description:
       "Interactive covenant and tribal dossier."
-  }
+  },
 
   {
     title:
@@ -283,8 +283,8 @@ const dossiers = [
       "JUDGEMENT",
 
     description:
-      "Judgment and fulfillment framework."
-  }
+      "Judgment and fulfillment framework.",
+  },
 ];
 
 /* =========================================
