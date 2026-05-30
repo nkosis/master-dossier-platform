@@ -796,4 +796,39 @@ td {
 
     display: none;
   }
+
+  /* =========================================
+   MASTER NAVIGATION
+========================================= */
+
+.master-nav {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+
+  background: #111;
+
+  border-bottom: 1px solid #333;
+
+  padding: 12px 20px;
+}
+
+.master-nav a {
+
+  color: #C9A84C;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  font-size: 14px;
+}
+
+.master-nav a:hover {
+
+  color: #E8C560;
+}
 }
