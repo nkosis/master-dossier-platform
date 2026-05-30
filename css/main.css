@@ -85,6 +85,10 @@ body {
 
 .site-title {
 
+  text-decoration: none;
+
+  color: var(--gold);
+
   font-family: 'Cinzel', serif;
 
   font-size: 12px;
@@ -92,8 +96,11 @@ body {
   font-weight: 600;
 
   letter-spacing: 0.12em;
+}
 
-  color: var(--gold);
+.site-title:hover {
+
+  color: var(--gold-bright);
 }
 
 .sidebar-toggle {
