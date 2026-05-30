@@ -207,7 +207,7 @@ const dossiers = [
       "The 12 Tribes of YASHARA'AL",
 
     file:
-      "the-12-tribes-of-yasharaal.html",
+      "THE 12 TRIBES OF YASHARAAL.html",
 
     category:
       "TRIBES",
@@ -218,10 +218,10 @@ const dossiers = [
 
   {
     title:
-      "DABARAYAM_28_Curses_Proof",
+      "DABARAYAM (Deuteronomy) 28 Curses Proof",
 
     file:
-      "DABARAYAM (Deuteronomy)_28_Curses_Proof.html",
+      "DABARAYAM (Deuteronomy) 28 Curses Proof.html",
 
     category:
       "PROPHECY",
@@ -232,10 +232,10 @@ const dossiers = [
 
   {
     title:
-      "DABARAYAM_28_Curses_Proof_MODERN_ERA_2006_2026",
+      "DABARAYAM (Deuteronomy) 28 Curses Proof 2006_2026",
 
     file:
-      "Deuteronomy_28_Curses_Proof_MODERN_ERA_2006_2026_v4.html",
+      "DABARAYAM (Deuteronomy) 28 Curses Proof 2006_2026.html",
 
     category:
       "PROPHECY",
@@ -246,10 +246,10 @@ const dossiers = [
 
   {
     title:
-      "Slavery_Effects_on_YASHARAAL",
+      "SLAVERY EFFECTS ON YASHARAAL",
 
     file:
-      "Slavery_Effects_on_YASHARAAL_Dossier_v2_1.html",
+      "SLAVERY EFFECTS ON YASHARAAL.html",
 
     category:
       "PROPHECY",
@@ -260,10 +260,10 @@ const dossiers = [
 
   {
     title:
-      "YASHARAAL_12_TRIBES_DOSSIER_UNIT_COMPILATION",
+      "YASHARAAL 12 TRIBES COMPILATION",
 
     file:
-      "YASHARAAL_12_TRIBES_DOSSIER_UNIT_COMPILATION.html",
+      "YASHARAAL 12 TRIBES COMPILATION.html",
 
     category:
       "TRIBES",
@@ -272,6 +272,19 @@ const dossiers = [
       "Interactive covenant and tribal dossier."
   }
 
+  {
+    title:
+      "STIFFNECKED PEOPLE AND OBEDIENCE UNTO YAHAWAH",
+
+    file:
+      "STIFFNECKED PEOPLE AND OBEDIENCE UNTO YAHAWAH.html",
+
+    category:
+      "JUDGEMENT",
+
+    description:
+      "Judgment and fulfillment framework."
+  }
 ];
 
 /* =========================================
