@@ -29,6 +29,31 @@ html { scroll-padding-top: 64px; }
 body { font-family:'Crimson Pro',Georgia,serif; background:var(--bg-page); color:var(--text-primary); font-size:19px; line-height:1.8; }
 .site-header { position:sticky; top:0; z-index:100; background:var(--bg-divider); border-bottom:1px solid var(--border-bright); padding:0 2rem; }
 .site-header-inner { width:100%; display:flex; align-items:center; justify-content:space-between; height:54px; gap:1rem; }
+
+.home-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:72px;
+  height:32px;
+  padding:0 12px;
+  text-decoration:none;
+  font-family:'Cinzel',serif;
+  font-size:11px;
+  letter-spacing:.14em;
+  color:var(--gold);
+  border:1px solid var(--border-bright);
+  background:rgba(0,0,0,.15);
+  transition:.2s ease;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+
+.home-link:hover{
+  background:rgba(201,168,76,.10);
+  color:var(--gold-bright);
+}
+
 .site-title { font-family:'Cinzel',serif; font-size:12px; font-weight:600; color:var(--gold); letter-spacing:0.12em; white-space:nowrap; flex-shrink:0; }
 .progress-bar-wrap { flex:1; height:2px; background:rgba(255,255,255,0.05); border-radius:2px; overflow:hidden; max-width:200px; }
 .progress-bar-fill { height:100%; background:var(--gold); width:0%; transition:width 0.3s ease; }
@@ -145,18 +170,30 @@ tr:hover td { background:rgba(201,168,76,0.03); }
   .entry-header { flex-direction:column; align-items:flex-start; }
   .def-row { grid-template-columns:1fr; }
 }
+
+/* HOME BUTTON VISUAL FIX */
+
+.site-header-inner{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.site-title{
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
 </style>
 </head>
 <body>
 <header class="site-header">
   <div class="site-header-inner">
 
-     <a href="../index.html"
-       class="home-link">
-
-       HOME
-
-    </a>
+     <a href="../index.html" class="home-link">HOME</a>
     
     <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Toggle navigation" title="Collapse / expand navigation">
       <span class="sidebar-toggle-bars"><span></span><span></span><span></span></span>
